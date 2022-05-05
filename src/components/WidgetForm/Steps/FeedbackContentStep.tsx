@@ -30,7 +30,7 @@ export function FeedbackContentStep({feedbackType, onFeedBackRestart, setFeedbac
     }
     
     return (
-        <div className="w-[calc(100vw-2rem)] md:w-[304px] h-[198px]">
+        <div className="w-[calc(100vw-2rem)] md:w-[304px] h-[198px] md:px-0 px-4">
             <header className="flex justify-center items-center">
                 <button 
                 type="button"
