@@ -8,7 +8,11 @@ module.exports = {
           300: '#996DFF',
           500: '#8257e6',
         }
-      }
+      },
+      animation: {
+        'spin': 'spin 10s linear infinite',
+        'bounce': 'bounce 15s linear infinite',
+      },
     },
   },
   plugins: [
