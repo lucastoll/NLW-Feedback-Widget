@@ -4,13 +4,13 @@ import { Widget } from "./components/Widget";
 
 export function App() {
   return (
-    <>
-     <Header/>
-     <div className="relative z-0">
+    <div className="bg-white dark:bg-[#09090A] text-zinc-300 transition-colors duration-500 min-h-full">
+      <Header/>
       <Main />
-      <Widget />
-     </div>
-    </>
+      <div className="relative z-30">
+          <Widget />
+      </div>
+    </div>
   )
 }
 
