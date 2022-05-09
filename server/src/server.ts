@@ -14,7 +14,7 @@ const app = express();
 /* REQUISITION = TUDO QUE CHEGA PARA O SERVER, USUARIO BLA BLA BLA */
 /* TUDO QUE EU QUERO DEVOLVER PARA O USUARIO */
 app.use(cors());
-app.use(express.json());
+app.use(express.json({limit: '50mb'}));
 app.use(routes)
 
 app.listen(process.env.PORT || 3333, () => {
