@@ -6,7 +6,7 @@ import { NodemailerMailAdapter } from './adapters/nodemailer/nodemailer-mail-ada
 export const routes = express.Router();
 
 routes.post('/feedbacks', async (requisiton, response) => {
-    const { type, comment, screenshot } = requisiton.body
+    const { type, comment, email, screenshot } = requisiton.body
 
 
     const prismaFeedbacksRepository = new PrismaFeedbacksRepository()
@@ -20,6 +20,7 @@ routes.post('/feedbacks', async (requisiton, response) => {
     await submitFeedbackFunctionRequest.execute({
         type,
         comment,
+        email,
         screenshot,
     })
 

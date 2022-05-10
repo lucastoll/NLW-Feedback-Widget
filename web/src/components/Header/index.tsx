@@ -1,4 +1,4 @@
-import { List, Moon, MoonStars, Sun } from "phosphor-react"
+import { List, MoonStars, Sun } from "phosphor-react"
 import { useEffect, useState } from "react"
 
 export function Header(){

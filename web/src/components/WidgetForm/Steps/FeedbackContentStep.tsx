@@ -16,6 +16,7 @@ interface FeedbackContentStepsProps {
 export function FeedbackContentStep({feedbackType, onFeedBackRestart, setFeedbackSent} : FeedbackContentStepsProps){
     const [screenshot, setScreenshot] = useState<string | null>(null)
     const [comment, setComment] = useState('');
+    const [email, setEmail] = useState('');
     const [isSendingFeedback, setIsSendingFeedback] = useState(false);
 
     const feedbackTypeInfo = feedbackTypes[feedbackType]; 
@@ -26,15 +27,16 @@ export function FeedbackContentStep({feedbackType, onFeedBackRestart, setFeedbac
         event.preventDefault();
 
         setIsSendingFeedback(true)
-
         console.log({
             screenshot,
             comment,
+            email
         })
 
         await api.post('/feedbacks', {
             type: feedbackType,
             comment,
+            email,
             screenshot,
         })
 
@@ -43,7 +45,7 @@ export function FeedbackContentStep({feedbackType, onFeedBackRestart, setFeedbac
     }
     
     return (
-        <div className="w-[calc(100vw-2rem)] md:w-[304px] h-[198px] md:px-0 px-4 z-30">
+        <div className="w-[calc(100vw-2rem)] md:w-[304px] md:px-0 px-4 z-30">
             <header className="flex justify-center items-center">
                 <button 
                 type="button"
@@ -73,6 +75,14 @@ export function FeedbackContentStep({feedbackType, onFeedBackRestart, setFeedbac
                 >
                 </textarea>
 
+                <input 
+                type="text" 
+                placeholder="Email de contato (opcional)" 
+                className="min-w-[250px] w-full text-sm placeholder-zinc-400 text-zinc-100 border-zinc-600 bg-transparent rounded-md focus:border-brand-500 focus:ring-brand-500 focus:outline-none"
+                onChange={event => setEmail(event.target.value)}
+                >
+                </input>
+
                 <footer className="flex gap-2 mt-2">
                     <ScreenshotButton
                         screenshot={screenshot} 
@@ -80,9 +90,9 @@ export function FeedbackContentStep({feedbackType, onFeedBackRestart, setFeedbac
                     />
 
                     <button
-                     type="submit"
-                     className="p-2 bg-brand-500 rounded-[4px] border-transparent flex-1 flex justify-center items-center text-sm hover:bg-brand-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-900 focus:ring-brand-500 transition-colors disabled:opacity-50 disabled:hover:bg-brand-500"
-                     disabled={comment.length === 0 || isSendingFeedback}
+                        type="submit"
+                        className="p-2 bg-brand-500 rounded-[4px] border-transparent flex-1 flex justify-center items-center text-sm hover:bg-brand-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-900 focus:ring-brand-500 transition-colors disabled:opacity-50 disabled:hover:bg-brand-500"
+                        disabled={comment.length === 0 || isSendingFeedback}
                     >
                     {isSendingFeedback ? <Loading /> : "Enviar feedback"}
                     </button>

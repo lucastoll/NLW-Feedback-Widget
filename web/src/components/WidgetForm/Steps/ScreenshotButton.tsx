@@ -38,8 +38,9 @@ export function ScreenshotButton({screenshot, onScreenshotTook} : ScreenshotButt
                     backgroundSize: 50,
                 }}
             >
-                <Trash weight="fill" />
+            <Trash weight="fill" />
             </button>
+           
         )
     }
 
