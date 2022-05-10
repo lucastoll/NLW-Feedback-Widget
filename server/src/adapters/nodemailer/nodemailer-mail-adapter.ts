@@ -2,7 +2,7 @@ import { MailAdapter, SendMailData } from "../mail-adapter"
 import nodemailer from 'nodemailer';
 
 const transporter = nodemailer.createTransport({
-  host: "lucasfernandestolotto@gmail.com",
+  host: "smtp.gmail.com",
   port: 587,
   secure: false, // true for 465, false for other ports
   service: "Gmail",
