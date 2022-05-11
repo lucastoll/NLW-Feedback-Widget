@@ -25,7 +25,7 @@ const transporter = nodemailer.createTransport({
 export class NodemailerMailAdapter implements MailAdapter {
     async sendMail({subject, body, attachments, to}: SendMailData){
         await transporter.sendMail({
-            from: `<${process.env.NICKEMAIL}>`,
+            from: `<lucasfernandestolotto@gmail.com>`,
             to,
             subject,
             html: body,
