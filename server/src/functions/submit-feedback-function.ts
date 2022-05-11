@@ -44,7 +44,7 @@ export class SubmitFeedbackFunction{
                     `<h2 style="color: #8257e6; text-align: center">Tipo do feedback: ${type}</h2>`,
                     `<h2 style="color: #8257e6; text-align: center">Comentario: ${comment}</h2>`,
                     email ?
-                    `<h2 style="color: #8257e6; text-align: center">Email de contato: ${email.toUpperCase}</h2>`
+                    `<h2 style="color: #8257e6; text-align: center">Email de contato: ${email}</h2>`
                     : 
                     '',
                     screenshot ? 
