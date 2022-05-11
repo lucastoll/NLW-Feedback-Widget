@@ -1,16 +1,16 @@
 import { MailAdapter, SendMailData } from "../mail-adapter"
 import nodemailer from 'nodemailer';
 
-const transporter = nodemailer.createTransport({
+/* const transporter = nodemailer.createTransport({
   host: "smtp.mailtrap.io",
   port: 2525,
   auth: {
     user: "981e7f7f36e0c1",
     pass: "00c192d608f4d3"
   }
-});
+}); */
 
-/* const transporter = nodemailer.createTransport({
+const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 587,
   secure: false, // true for 465, false for other ports
@@ -20,7 +20,7 @@ const transporter = nodemailer.createTransport({
     pass: process.env.NICKPASSWORD,
   },
   tls: { rejectUnauthorized: false }
-}); */
+});
 
 export class NodemailerMailAdapter implements MailAdapter {
     async sendMail({subject, body, attachments, to}: SendMailData){
