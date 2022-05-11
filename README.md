@@ -1,5 +1,7 @@
 # NLW-Feedback-Widget
 
+https://nlw-feedback-widget.vercel.app/
+
 <p align="center">
   <img alt="Next Level Week #8" src="https://user-images.githubusercontent.com/86172649/167728448-de7b62a5-aab9-4281-92e8-866fa0bdfc88.png" />
 </p>
@@ -7,11 +9,11 @@
 https://user-images.githubusercontent.com/86172649/167920194-5dfdf5f0-578c-44f0-9143-97b596c0364b.mp4
 
 <p align="center">
-  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-como-executar">Como executar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-funcionalidades">Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-tecnologias-e-ferramentas">Tecnologias e ferramentas</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-como-executar">Como executar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-license">Licença</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 </p>
 
 ## 💻 Projeto
@@ -22,9 +24,9 @@ Este projeto foi desenvolvido durante a Next Level Week, apresentado pela **[Roc
 
 ## 🎯 Funcionalidades
 
-- ✔️ Envio de feedbacks via e-mail.
-- ✔️ Screenshot com html2canvas
-- ✔️ Light/Dark Mode.
+- ✔️ Envio de feedbacks via e-mail utilizando back-end.
+- ✔️ Screenshot com html2canvas.
+- ✔️ Light/Dark Mode com tailwind.
 
 ## 🧪 Tecnologias e Ferramentas
 
@@ -52,7 +54,6 @@ Framework CSS onde os elementos são estilizados com classes inline no HTML, des
 
 ![image](https://user-images.githubusercontent.com/86172649/167927863-439b61ce-b2bc-4512-b8a6-1a5534f32817.png)
 
-  
 <h3><a href="https://headlessui.dev/">HeadlessUI</a></h3>
   
 Biblioteca react.js usada para desenvolver componentes pre-configurados, ele foi usado no projeto para fazer o PopOver, que é o botão de feedback, de modo que ele possui toda a parte de accesibilidade (navegação via teclado) e lógica de abertura / fechamento prontas pelo headlessui.
@@ -71,43 +72,60 @@ Ferramenta de icones gratuitos, utilizados em todo o site.
 
 Ferramenta utilizada para instalação de pacotes (com o Node Package Manager) e para a execução do JavaScript no back-end, sem um browser.
   
+<h3><a href="https://nodemailer.com/about/">Nodemailer + Mailtrap.io</a></h3>
+
+O nodemailer é uma biblioteca do node.js utilizada para facilitar o envio de e-mails, ele foi utilizado NESTA BRANCH com o intuito de enviar e-mails em um ambiente de teste, em conjunto com o serviço mailtrap.io, isso significa que os e-mails não são realmente enviados para os destinatários, cheque a branch gmail caso queira saber como realmente enviar os e-mails.
+  
+![image](https://user-images.githubusercontent.com/86172649/167944184-0ed48c35-e393-49fd-9463-01db25c91244.png)
+  
 <h3><a href="https://expressjs.com/pt-br/">Express</a></h3>
 
 Framework para o desenvolvimento de aplicações JavaScript com o Node.js, foi desenvolvido para otimizar a construção de aplicações web e APIs e foi utilizado no projeto com o mesmo propósito.
   
+<h3><a href="https://www.prisma.io/">Prisma</a></h3>
+
+Ferramenta feita para o Node.js e TypeScript, serve para consultar seu banco de dados sem utilizar a linguagem SQL a fundo, ele foi utilizada no projeto com o mesmo propósito.
+
+<h3><a href="https://www.postgresql.org/">PostgreSQL</a></h3>
+O PostgreSQL é um sistema de banco de dados, ele atua como uma ferramenta de sistema de gerenciamento de bancos de dados relacionados. Seu foco é permitir implementação da linguagem SQL em estruturas, garantindo um trabalho com os padrões desse tipo de ordenação dos dados, ele foi utilizada no projeto com o mesmo propósito.
+  
+<h3><a href="https://insomnia.rest/download">Insomnia</a></h3>
+Ferramenta para utilizada no teste de aplicações back-end, foi utilizada no projeto para enviar requisições e testar o funcionamento do back-end antes de conectar o mesmo com o front-end.
   
 </ul>
-
-
-
-- [Prisma](https://www.prisma.io)
-- [PostgreSQL](https://www.postgresql.org)
 
 ## 🚀 Como executar
 
 Clone o repositório e acesse a pasta.
 
 ```bash
-$ git clone https://github.com/devlucascardoso/feedback-widget
-$ cd nlw8
+$ git clone https://github.com/lucastoll/NLW-Feedback-Widget.git
+$ cd NLW-Feedback-Widget
 ```
 
 Para iniciá-lo, siga os passos abaixo:
 
+### Aplicação Web
 ```bash
-# Instalar as dependências
+$ cd web
+
+## Instalar as dependências.
 $ npm install
 
-# Criar o banco de dados
-$ npm prisma migrate dev
-
-# Iniciar o projeto
-$ npm run dev
-
-# Faça uma copia do arquivo `.env.example` para `.env` e preencha com as suas credenciais
+## Iniciar o projeto - (localhost:3000)
+$ npm run dev 
 ```
 
-A aplicação pode ser acessada em [`localhost:3333`](http://localhost:3333).
+### Aplicação Back-end
+```bash
+$ cd server
+
+## Criar o banco de dados
+$ npm prisma migrate dev
+
+## Iniciar o projeto - (localhost:3333)
+$ npm run dev
+```
 
 ## 🔖 Layout
 
