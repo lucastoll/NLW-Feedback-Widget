@@ -22,6 +22,10 @@ O projeto desenvolvido é uma aplicação para coleta de feedbacks que pode ser 
 
 Este projeto foi desenvolvido durante a Next Level Week, apresentado pela **[Rocketseat](https://www.rocketseat.com.br)**.
 
+## 📕 Fluxograma de funcionamento do front-end
+
+[fluxograma-nlw.pdf](https://github.com/lucastoll/NLW-Feedback-Widget/files/8680985/fluxograma-nlw.pdf)
+
 ## 🎯 Funcionalidades
 
 - ✔️ Envio de feedbacks via e-mail utilizando back-end.
