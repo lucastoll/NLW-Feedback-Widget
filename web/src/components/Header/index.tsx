@@ -1,5 +1,5 @@
 import { List, MoonStars, Sun } from "phosphor-react"
-import { useEffect, useState } from "react"
+import { useLayoutEffect, useState } from "react"
 
 export function Header(){
     const [isDarkMode, setIsDarkMode] = useState(
@@ -10,7 +10,7 @@ export function Header(){
         setIsDarkMode(!isDarkMode)
     }
     
-    useEffect(() => {
+    useLayoutEffect(() => {
         const html = window.document.documentElement;
     
         const prevTheme = isDarkMode ? "light" : "dark";
